@@ -8,7 +8,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
     <style type="text/css">
         .wrapper{
-            width: 650px;
+            width: 50%;
             margin: 0 auto;
         }
         .page-header h2{
@@ -30,7 +30,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Vignettes Details</h2>
+                        <h2 class="pull-left">Categories Details</h2>
                         <a href="index.php" class="btn btn-danger pull-right">Main panel</a>
                         <a href="create.php" class="btn btn-success pull-right">Countries panel</a>
                         <a href="create_category.php" class="btn btn-success pull-right">Add New Category</a>
@@ -43,13 +43,12 @@
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
-                                        echo "<th>ID</th>";
+                                        
                                         echo "<th>Category</th>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td>" . $row['CategoryId'] . "</td>";
                                         echo "<td>" . $row['Name'] . "</td>";
                                         echo "<td>";
                                             echo "<a href='read_category.php?id=". $row['CategoryId'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
