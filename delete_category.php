@@ -10,10 +10,12 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $param_id = trim($_POST["id"]);
         
         if(mysqli_stmt_execute($stmt)){
-            header("location: index.php");
+            header("location: index_categories.php");
             exit();
         } else{
             echo "Oops! Something went wrong. Please try again later.";
+            header("location: error.php");
+            exit();
         }
     }
      
@@ -54,7 +56,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                             <p>Are you sure you want to delete this record?</p><br>
                             <p>
                                 <input type="submit" value="Yes" class="btn btn-danger">
-                                <a href="index.php" class="btn btn-default">No</a>
+                                <a href="index_category.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>

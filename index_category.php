@@ -31,45 +31,35 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Vignettes Details</h2>
-                        <a href="index_category.php" class="btn btn-success pull-right">Categories panel</a>
+                        <a href="index.php" class="btn btn-danger pull-right">Main panel</a>
                         <a href="create.php" class="btn btn-success pull-right">Countries panel</a>
-                        <a href="create.php" class="btn btn-danger pull-right">Add New Vignette</a>
+                        <a href="create_category.php" class="btn btn-success pull-right">Add New Category</a>
                     </div>
                     <?php
                     require_once "config.php";
-                    $sql = "SELECT * FROM Vignettes_data";
+                    $sql = "SELECT * FROM Categories";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
                                 echo "<thead>";
                                     echo "<tr>";
                                         echo "<th>ID</th>";
-                                        echo "<th>Regnum</th>";
-                                        echo "<th>Country</th>";
                                         echo "<th>Category</th>";
-                                        echo "<th>Start date</th>";
-                                        echo "<th>End date</th>";
-                                    echo "</tr>";
                                 echo "</thead>";
                                 echo "<tbody>";
                                 while($row = mysqli_fetch_array($result)){
                                     echo "<tr>";
-                                        echo "<td>" . $row['Id'] . "</td>";
-                                        echo "<td>" . $row['Regnum'] . "</td>";
-                                        echo "<td>" . $row['CountryId'] . "</td>";
                                         echo "<td>" . $row['CategoryId'] . "</td>";
-                                        echo "<td>" . $row['Valid_from'] . "</td>";
-                                        echo "<td>" . $row['Valid_to'] . "</td>";
+                                        echo "<td>" . $row['Name'] . "</td>";
                                         echo "<td>";
-                                            echo "<a href='read.php?id=". $row['Id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update.php?id=". $row['Id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete.php?id=". $row['Id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                            echo "<a href='read_category.php?id=". $row['CategoryId'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='update_category.php?id=". $row['CategoryId'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='delete_category.php?id=". $row['CategoryId'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }
                                 echo "</tbody>";                            
                             echo "</table>";
-                            
                             mysqli_free_result($result);
                         } else{
                             echo "<p class='lead'><em>No records were found.</em></p>";

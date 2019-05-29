@@ -9,9 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $input_name = trim($_POST["name"]);
     if(empty($input_name)){
         $name_err = "Please enter a name.";
-    } elseif(!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options"=>array("regexp"=>"/^[a-zA-Z\s]+$/")))){
-        $name_err = "Please enter a valid name.";
-    } else{
+    }else{
         $name = $input_name;
     }
     
@@ -26,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             if(mysqli_stmt_execute($stmt)){
                 
-                header("location: index.php");
+                header("location: index_category.php");
                 exit();
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -69,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             <span class="help-block"><?php echo $name_err;?></span>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="index.php" class="btn btn-default">Cancel</a>
+                        <a href="index_category.php" class="btn btn-default">Cancel</a>
                     </form>
                 </div>
             </div>        
