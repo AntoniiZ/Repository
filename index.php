@@ -37,7 +37,7 @@
                     </div>
                     <?php
                     require_once "config.php";
-                    $sql = "SELECT * FROM Vignettes_data";
+                    $sql = "SELECT v.Id, v.Regnum, v.Valid_from, v.Valid_to, c.Name, ck.Name as CategoryName FROM Vignettes_data v left join Categories c on v.CategoryId = c.CategoryId left join Countries ck on ck.CountryId = v.CountryId";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
@@ -56,8 +56,8 @@
                                     echo "<tr>";
                                         echo "<td>" . $row['Id'] . "</td>";
                                         echo "<td>" . $row['Regnum'] . "</td>";
-                                        echo "<td>" . $row['CountryId'] . "</td>";
-                                        echo "<td>" . $row['CategoryId'] . "</td>";
+                                        echo "<td>" . $row['Name'] . "</td>";
+                                        echo "<td>" . $row['CategoryName'] . "</td>";
                                         echo "<td>" . $row['Valid_from'] . "</td>";
                                         echo "<td>" . $row['Valid_to'] . "</td>";
                                         echo "<td>";
