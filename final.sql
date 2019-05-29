@@ -11,7 +11,7 @@ Create table Vignettes_data(
     Valid_to datetime not null,
     
     FOREIGN key (CountryId) references Countries(CountryId) on update cascade,
-    foreign key (CategoryId) references Categories(CategoryID) on update cascade
+    foreign key (CategoryId) references Categories(CategoryId) on update cascade
 );
 
 create table Countries(
