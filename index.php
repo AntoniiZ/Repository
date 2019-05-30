@@ -32,8 +32,8 @@
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Vignettes Details</h2>
                         <a href="index_category.php" class="btn btn-success pull-right">Categories panel</a>
-                        <a href="create.php" class="btn btn-success pull-right">Countries panel</a>
-                        <a href="create.php" class="btn btn-danger pull-right">Add New Vignette</a>
+                        <a href="index_country.php" class="btn btn-success pull-right">Countries panel</a>
+                        <a href="create_vignette.php" class="btn btn-danger pull-right">Add New Vignette</a>
                     </div>
                     <?php
                     require_once "config.php";

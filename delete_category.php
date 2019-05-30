@@ -10,7 +10,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         $param_id = trim($_POST["id"]);
         
         if(mysqli_stmt_execute($stmt)){
-            header("location: index_categories.php");
+            header("location: index_category.php");
             exit();
         } else{
             echo "Oops! Something went wrong. Please try again later.";
