@@ -32,7 +32,7 @@
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Categories Details</h2>
                         <a href="index.php" class="btn btn-danger pull-right">Main panel</a>
-                        <a href="create.php" class="btn btn-success pull-right">Countries panel</a>
+                        <a href="create_vignettes.php" class="btn btn-success pull-right">Countries panel</a>
                         <a href="create_category.php" class="btn btn-success pull-right">Add New Category</a>
                     </div>
                     <?php
