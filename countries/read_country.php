@@ -1,9 +1,9 @@
 <?php
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
 
-    require_once "config.php";
+    require_once "../config.php";
     
-    $sql = "SELECT * FROM Categories WHERE CategoryId = ?";
+    $sql = "SELECT * FROM Countries WHERE CountryId = ?";
     
     if($stmt = mysqli_prepare($link, $sql)){
         mysqli_stmt_bind_param($stmt, "i", $param_id);
@@ -56,13 +56,13 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header">
-                        <h1>View recorded categories</h1>
+                        <h1>View recorded for country</h1>
                     </div>
                     <div class="form-group">
                         <label>Name</label>
                         <p class="form-control-static"><?php echo $row["Name"]; ?></p>
                     </div>
-                    <p><a href="index_category.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="index_country.php" class="btn btn-danger">Back</a></p>
                 </div>
             </div>        
         </div>

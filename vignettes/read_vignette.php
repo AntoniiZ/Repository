@@ -1,7 +1,7 @@
 <?php
 if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
 
-    require_once "config.php";
+    require_once "../config.php";
     $sql = "SELECT * FROM Vignettes_data WHERE Id = ?";
 
     if($stmt = mysqli_prepare($link, $sql)){
@@ -15,7 +15,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             if(mysqli_num_rows($result) == 1){
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             } else{
-                header("location: error.php");
+                header("location: ../error.php");
                 exit();
             }
 
@@ -36,7 +36,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             if(mysqli_num_rows($result) == 1){
                 $rowCategory = mysqli_fetch_array($result, MYSQLI_ASSOC);
             } else{
-                header("location: error.php");
+                header("location: ../error.php");
                 exit();
             }
 
@@ -58,7 +58,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
             if(mysqli_num_rows($result) == 1){
                 $rowCountry = mysqli_fetch_array($result, MYSQLI_ASSOC);
             } else{
-                header("location: error.php");
+                header("location: ../error.php");
                 exit();
             }
 
@@ -69,7 +69,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     }
     mysqli_close($link);
 } else{
-    header("location: error.php");
+    header("location: ../error.php");
     exit();
 }
 ?>

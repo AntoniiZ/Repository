@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST["id"]) && !empty($_POST["id"])){
-    require_once "config.php";
+    require_once "../config.php";
     
     $sql = "DELETE FROM Countries WHERE CountryId = ?";
     
@@ -14,7 +14,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
             exit();
         } else{
             echo "Oops! Something went wrong. Please try again later.";
-            header("location: error.php");
+            header("location: ../error.php");
             exit();
         }
     }
@@ -24,7 +24,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     mysqli_close($link);
 } else{
     if(empty(trim($_GET["id"]))){
-        header("location: error.php");
+        header("location: ../error.php");
         exit();
     }
 }

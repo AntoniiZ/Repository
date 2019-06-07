@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../config.php";
 
 $categories = $countries = [];
 $selected_countryid = $selected_categoryid = "disabled";
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_bind_param($stmt, "siiss", $input_regnum, $selected_categoryid, $selected_countryid, $from->format('Y-m-d'), $until->format('Y-m-d'));
 
             if (mysqli_stmt_execute($stmt)) {
-                header("location: index.php");
+                header("location: ../index.php");
                 exit();
             } else {
                 echo "Something went wrong. Please try again later.";

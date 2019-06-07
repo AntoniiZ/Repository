@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../config.php";
  
 $name = "";
 $name_err = $address_err = $salary_err = "";

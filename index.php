@@ -31,9 +31,9 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Vignettes Details</h2>
-                        <a href="index_category.php" class="btn btn-success pull-right">Categories panel</a>
-                        <a href="index_country.php" class="btn btn-success pull-right">Countries panel</a>
-                        <a href="create_vignette.php" class="btn btn-danger pull-right">Add New Vignette</a>
+                        <a href="categories/index_category.php" class="btn btn-success pull-right">Categories</a>
+                        <a href="countries/index_country.php" class="btn btn-success pull-right">Countries</a>
+                        <a href="vignettes/create_vignette.php" class="btn btn-danger pull-right">Add New Vignette</a>
                     </div>
                     <?php
                     require_once "config.php";
@@ -61,9 +61,9 @@
                                         echo "<td>" . $row['Valid_from'] . "</td>";
                                         echo "<td>" . $row['Valid_to'] . "</td>";
                                         echo "<td>";
-                                            echo "<a href='read_vignette.php?id=". $row['Id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
-                                            echo "<a href='update_vignette.php?id=". $row['Id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
-                                            echo "<a href='delete_vignette.php?id=". $row['Id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
+                                            echo "<a href='vignettes/read_vignette.php?id=". $row['Id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
+                                            echo "<a href='vignettes/update_vignette.php?id=". $row['Id'] ."' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
+                                            echo "<a href='vignettes/delete_vignette.php?id=". $row['Id'] ."' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
                                         echo "</td>";
                                     echo "</tr>";
                                 }

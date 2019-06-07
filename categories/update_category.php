@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../config.php";
  
 $name = "";
 $name_err = "";
@@ -54,7 +54,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
                     
                     $name = $row["Name"];
                 } else{
-                    header("location: error.php");
+                    header("location: ../error.php");
                     exit();
                 }
                 
@@ -67,7 +67,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
         
         mysqli_close($link);
     }  else{
-        header("location: error.php");
+        header("location: ../error.php");
         exit();
     }
 }

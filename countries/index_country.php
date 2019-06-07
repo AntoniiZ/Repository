@@ -31,12 +31,12 @@
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Country Details</h2>
-                        <a href="index.php" class="btn btn-danger pull-right">Main panel</a>
-                        <a href="index_country.php" class="btn btn-success pull-right">Countries panel</a>
-                        <a href="create_country.php" class="btn btn-success pull-right">Add New Country</a>
+                        <a href="../index.php" class="btn btn-success pull-right">Vignettes</a>
+                        <a href="../categories/index_category.php" class="btn btn-success pull-right">Categories</a>
+                        <a href="create_country.php" class="btn btn-danger pull-right">Add New Country</a>
                     </div>
                     <?php
-                    require_once "config.php";
+                    require_once "../config.php";
                     $sql = "SELECT * FROM Countries";
                     if($result = mysqli_query($link, $sql)){
                         if(mysqli_num_rows($result) > 0){
